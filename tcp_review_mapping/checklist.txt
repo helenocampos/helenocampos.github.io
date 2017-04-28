@@ -1,0 +1,8 @@
+O que deve ter no apêndice externo:
+
+um dump do banco (lembrar de tirar os comentários pessoais)
+Todas as análises estatísticas 
+Papers aceitos para o mapeamento
+Papers aceitos para a revisão
+Systematic mapping report (planilha ja ta na pasta external_data)
+Planilha com os dados de APFD e de contexto das avaliações
