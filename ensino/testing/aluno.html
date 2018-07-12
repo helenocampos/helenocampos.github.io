@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Calculadora de aprovação</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script>
+	function calculaAprovacao(){
+		var media = document.getElementById("media").value;
+		var faltas = document.getElementById("faltas").value;
+		if ((!isNaN(media) && media.toString().indexOf(',') == -1)
+		&& (!isNaN(faltas) && faltas.toString().indexOf(',') == -1)){
+			if(faltas<25){
+				if(media>=60){
+					exibeResultado(aprovado());
+				}else{
+					if(media>=40){
+						exibeResultado(recuperacao());
+					}else{
+						exibeResultado(reprovadoNota());
+					}
+				}
+			}else{
+				exibeResultado(reprovadoFaltas());
+			}
+		}else{
+			exibeResultado("Dados inválidos. Use ponto '.' para separar casas decimais.");
+		}
+	}
+	
+	function aprovado(){
+		return "Aluno aprovado";
+	}
+	
+	function recuperacao(){
+		return "Aluno em recuperação";
+	}
+	
+	function reprovadoFaltas(){
+		return "Aluno reprovado por faltas";
+	}
+	
+	function reprovadoNota(){
+		return "Aluno reprovado por nota";
+	}
+	
+	function exibeResultado(mensagem){
+		document.getElementById("resultado").innerText = mensagem;
+	}
+</script>
+</head>
+<body>
+
+<div class="container" style="margin-top:30px">
+  
+    
+      <h2>Calculadora de aprovação</h2>
+  <div class="row">
+	<div class="col">
+	 <label for="media">Média final</label>
+	</div>
+	<div class="col">
+	 <label for="faltas">Quantidade de faltas</label>
+	</div>
+	
+  </div>
+  <div class="row">
+    <div class="col">
+      <input type="text" class="form-control" id="media" placeholder="Informe a média final do aluno" pattern="([0-9]+([.][0-9]*)?|[.][0-9]+)" title="Use o caractere ponto '.' para separar casas decimais">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" id="faltas" placeholder="Informe a quantidade de faltas do aluno" pattern="([0-9]+([.][0-9]*)?|[.][0-9]+)">
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary" onclick="calculaAprovacao()">Calcular</button>
+    </div>
+  </div>
+ 
+
+	<div class=row>
+		<div class="col-sm">
+			Resultado:
+		</div>
+		<div class="col-sm" id="resultado">
+		
+		</div>
+	</div>
+  
+</div>
+
+</body>
+</html>

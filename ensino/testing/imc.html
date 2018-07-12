@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Calculadora de IMC</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script>
+	function calculaIMC(){
+		var peso = document.getElementById("peso").value;
+		var altura = document.getElementById("altura").value;
+		var sexo = document.querySelector('input[name="sexo"]:checked').value;
+		imc = peso / (altura*altura);
+		if (!isNaN(imc) && imc.toString().indexOf(',') == -1){
+			if(sexo == "m"){
+				if(imc<20.7){
+					exibeResultado(abaixo());
+				}else if(imc<26.4){
+					exibeResultado(ideal());
+				}else if(imc<27.8){
+					exibeResultado(acima());
+				}else if(imc<31.1){
+					exibeResultado(obesidade());
+				}else {
+					exibeResultado(morbida());
+				}
+			}else if(sexo=="f"){
+				if(imc<19.1){
+					exibeResultado(abaixo());
+				}else if(imc<25.8){
+					exibeResultado(ideal());
+				}else if(imc<27.3){
+					exibeResultado(acima());
+				}else if(imc<32.3){
+					exibeResultado(obesidade());
+				}else {
+					exibeResultado(morbida());
+				}
+			}
+		}else{
+			exibeResultado("Dados inválidos. Use ponto '.' para separar casas decimais.");
+		}
+	}
+	
+	function abaixo(){
+		return "Peso baixo";
+	}
+	
+	function ideal(){
+		return "Peso ideal";
+	}
+	
+	function acima(){
+		return "Acima do peso ideal";
+	}
+	
+	function obesidade(){
+		return "Obesidade";
+	}
+	
+	function morbida(){
+		return "Obesidade mórbida";
+	}
+	
+	function exibeResultado(mensagem){
+		document.getElementById("resultado").innerText = mensagem;
+	}
+</script>
+</head>
+<body>
+
+<div class="container" style="margin-top:30px">
+      <h2>Calculadora de IMC</h2>
+  <div class="row">
+	<div class="col">
+	 <label for="peso">Peso</label>
+	</div>
+	<div class="col">
+	 <label for="altura">Altura</label>
+	</div>
+	
+  </div>
+  <div class="row">
+    <div class="col">
+      <input type="text" class="form-control" id="peso" placeholder="Informe seu peso" pattern="([0-9]+([.][0-9]*)?|[.][0-9]+)" title="Use o caractere ponto '.' para separar casas decimais">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" id="altura" placeholder="Informe sua altura" pattern="([0-9]+([.][0-9]*)?|[.][0-9]+)">
+    </div>
+  </div>
+  <fieldset class="form-group">
+    <div class="row">
+		<div class=col>
+			Sexo
+		</div>
+		<div class="col">
+			<div class="form-check">
+			<input class="form-check-input" type="radio" name="sexo" id="gridRadios1" value="m" checked>
+			<label class="form-check-label" for="gridRadios1">
+				Masculino
+			</label>
+			</div>
+		<div class="form-check">
+          <input class="form-check-input" type="radio" name="sexo" id="gridRadios2" value="f">
+          <label class="form-check-label" for="gridRadios2">
+            Feminino
+          </label>
+        </div>
+		</div>
+	</div>
+  </fieldset>
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary" onclick="calculaIMC()">Calcular</button>
+    </div>
+  </div>
+<div class=container>
+	<div class=row>
+		<div class="col-sm">
+			Resultado:
+		</div>
+		<div class="col-sm" id="resultado">
+		
+		</div>
+	</div>
+</div>
+</div>
+
+</body>
+</html>
