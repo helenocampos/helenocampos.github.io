@@ -22,7 +22,7 @@
 					exibeResultado(ideal());
 				}else if(imc<27.8){
 					exibeResultado(acima());
-				}else if(imc<31.1){
+				}else if(imc<31.2){
 					exibeResultado(obesidade());
 				}else {
 					exibeResultado(morbida());
@@ -44,27 +44,27 @@
 			exibeResultado("Dados inválidos. Use ponto '.' para separar casas decimais.");
 		}
 	}
-	
+
 	function abaixo(){
 		return "Peso baixo";
 	}
-	
+
 	function ideal(){
 		return "Peso ideal";
 	}
-	
+
 	function acima(){
 		return "Acima do peso ideal";
 	}
-	
+
 	function obesidade(){
 		return "Obesidade";
 	}
-	
+
 	function morbida(){
 		return "Obesidade mórbida";
 	}
-	
+
 	function exibeResultado(mensagem){
 		document.getElementById("resultado").innerText = mensagem;
 	}
@@ -83,9 +83,9 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="imc.html">IMC</a>
-      </li>    
+      </li>
     </ul>
-  </div>  
+  </div>
 </nav>
 
 <div class="container" style="margin-top:30px">
@@ -97,7 +97,7 @@
 	<div class="col">
 	 <label for="altura">Altura</label>
 	</div>
-	
+
   </div>
   <div class="row">
     <div class="col">
@@ -139,7 +139,7 @@
 			Resultado:
 		</div>
 		<div class="col-sm" id="resultado">
-		
+
 		</div>
 	</div>
 </div>
