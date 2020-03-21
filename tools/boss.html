@@ -1,0 +1,271 @@
+<head>
+	<meta charset="utf-8"/>
+<script>
+	var chars = [];
+	var eds = [];
+	var rps = [];
+	var eks = [];
+	var ms = [];
+	function processar(){
+		var text = document.getElementById("localchat");
+		var lines = text.value.split("\n");
+		var charNames = new Set();
+		for(i=0; i<lines.length; i++){
+			if(lines[i].includes("[")){
+				var splitted = lines[i].split(" ");
+				charName = "";
+				index = 1
+				while(!splitted[index].includes("[")){
+					charName+=" "+splitted[index];
+					index++;
+				}
+				charNames.add(charName);
+			}
+
+		}
+		// console.log(charNames);
+		// var divNames = document.getElementById("chares");
+		// divNames.style.visibility="visible";
+		for (let charName of charNames){
+			var char = getCharInfo(charName);
+			// console.log(char.name+": "+char.vocation);
+			chars.push(char);
+		}
+		console.log(chars);
+		countVocations(chars);
+	}
+
+	function printPool(pool){
+
+		var names = 'Pool: ';
+		for(let char of pool) names+=' '+char.name
+		console.log(names)
+	}
+
+	function showTeam(team, message, result){
+		var names = message+' ';
+		for(let char of team) names+=' '+char.name+",";
+		result.innerHTML+=names+"<br>";
+	}
+
+	function removeItem(list, item){
+		const index = list.indexOf(item);
+		if (index > -1) {
+		  list.splice(index, 1);
+		}
+	}
+
+	function alocate(team, pool, amount, subs){
+		if(pool.length>0){
+			console.log("Allocating "+amount+" of vocation: "+pool[0].vocation);
+			printPool(pool);
+		}
+
+		for(x=0; x<amount; x++){
+			if(pool.length>0){
+				var sorteado = pool[Math.floor(Math.random() * pool.length)]
+				console.log(sorteado)
+				removeItem(pool, sorteado)
+				printPool(pool);
+				team.push(sorteado)
+			}else{
+				if(!subs){
+					result.innerHTML="Número insuficiente de pessoas pra formação desejada <br>"
+				}
+				return;
+			}
+		}
+	}
+
+	function limparTimes(){
+		eds = [];
+		rps = [];
+		eks = [];
+		ms = [];
+		chars = [];
+		document.getElementById("result").innerHTML="";
+		processar();
+
+	}
+
+	function formarTimes(){
+		var qtyEds = document.getElementById("qtyEds").value;
+		var qtyEks = document.getElementById("qtyEks").value;
+		var qtyRps = document.getElementById("qtyRps").value;
+		var qtyMs = document.getElementById("qtyMs").value;
+		var subs = document.getElementById("subs").checked;
+		var qty = document.getElementById("qty").value;
+		var result = document.getElementById("result");
+		for(i=0; i<qty; i++){
+			console.log("time "+(i+1)+": ");
+			var team = [];
+
+			alocate(team, eds, qtyEds, false);
+			alocate(team, eks, qtyEks, false);
+			var msInTeam = ms.length<qtyMs?ms.length:qtyMs;
+			alocate(team, ms, qtyMs, subs);
+			alocate(team, rps, qtyRps, false);
+			if(msInTeam < qtyMs){
+				var diff = qtyMs - msInTeam;
+				if(rps.length >=diff){
+					alocate(team, rps, diff, false);
+				}else{
+					diff = diff - rps.length;
+					alocate(team, rps, rps.length, subs);
+					alocate(team, eds, diff, false);
+				}
+			}
+			console.log(team);
+			showTeam(team, "time "+(i+1)+": ", result);
+		}
+		var leftOver = ''
+		for(let char of eds) leftOver+=' '+char.name+",";
+		for(let char of rps) leftOver+=' '+char.name+",";
+		for(let char of eks) leftOver+=' '+char.name+",";
+		for(let char of ms) leftOver+=' '+char.name+",";
+		result.innerHTML+="<br> Prioridade amanhã: "+leftOver;
+	}
+
+	function countVocations(chars){
+		for (let char of chars){
+			if(char.vocation=="Elder Druid"){
+				eds.push(char);
+			}
+			if(char.vocation=="Master Sorcerer"){
+				ms.push(char);
+			}
+			if(char.vocation=="Elite Knight"){
+				eks.push(char);
+			}
+			if(char.vocation=="Royal Paladin"){
+				rps.push(char);
+			}
+		}
+
+		var divVocations = document.getElementById("vocations");
+		divVocations.style.visibility="visible";
+		document.getElementById("eks").innerHTML=eks.length;
+		document.getElementById("rps").innerHTML=rps.length;
+		document.getElementById("ms").innerHTML=ms.length;
+		document.getElementById("eds").innerHTML=eds.length;
+		document.getElementById("total").innerHTML=chars.length;
+
+	}
+
+	function getCharInfo(name){
+		try{
+			var request = httpGet(name);
+			var char = JSON.parse(request).characters.data;
+			return char;
+		}catch(e){
+			console.log(e);
+		}
+		return null;
+	}
+
+	function httpGet(name)
+	{
+		var xmlHttp = new XMLHttpRequest();
+		xmlHttp.open( "GET", "https://api.tibiadata.com/v2/characters/"+name+".json", false );
+		xmlHttp.send( null );
+		return xmlHttp.responseText;
+	}
+</script>
+</head>
+
+<body>
+<table>
+<tr>
+	<td>
+		<ul>
+		<li>Limpe o local chat</li>
+		<li>Peça que todos mandem uma única mensagem no chat</li>
+		<li>Selecione todo o local chat e copie</li>
+		<li>Cole abaixo</li>
+	</ul>
+		<textarea id="localchat" style="width:300; height:300">
+21:14 Conitio [525]: exeta res
+21:14 Roshoot [403]: exevo mas san
+21:14 Marujo Tatuado [454]: exura gran san
+21:14 Roshoot [403]: exura gran san
+21:14 Conitio [525]: exori min
+21:14 Taylon Terni [776]: exeta res
+21:14 Creitos [566]: exura gran mas res
+21:14 Roshoot [403]: exura gran san
+21:14 Marujo Tatuado [454]: exura gran san
+21:14 Conitio [525]: exeta res
+21:14 Taylon Terni [776]: exeta res
+21:14 Roshoot [403]: exura gran san
+21:14 Conitio [525]: exori mas
+21:14 Druidinho Bala [525]: exori mas
+21:14 Lopexx [525]: exori mas
+21:14 Bro [525]: exori mas
+21:14 Lopexx [525]: exori mas
+21:14 Beth Swain [525]: exori mas
+21:14 Grusby [525]: exori mas
+21:14 Jharp [525]: exori mas
+21:14 Meu Binhu [525]: exori mas
+21:14 Roshoot [525]: exori mas
+21:14 Yavii [525]: exori mas
+21:14 Mahtynho [525]: exori mas
+21:14 Re Fry [525]: exori mas
+21:14 Zeitonah [525]: exori mas
+21:14 Ikido [525]: exori mas
+21:14 Maaycon [525]: exori mas
+21:14 Girtrudes [525]: exori mas
+21:14 Pakitzz [525]: exori mas
+21:14 Sonekka [525]: exori mas
+21:14 Druid Cervejeiro [525]: exori mas
+21:14 Heal Raizer [525]: exori mas
+		</textarea>
+		<button onclick=processar()>Processar</button>
+	</td>
+	<td>
+		<div id="vocations" style=visibility:hidden>
+			<center><h1>PARTICIPANTES:</h1></center><br/>
+			<h3>Royal paladins: <span id="rps"></span></h3>
+			<h3>Elder druids: <span id="eds"></span></h3>
+			<h3>Master sorcerers: <span id="ms"></span></h3>
+			<h3>Elite knights: <span id="eks"></span></h3>
+			<h3>Total: <span id="total"></span></h3>
+			<h3>Estrutura do time:</h3>
+			<table>
+				<tr>
+					<td>Quantidade de times:</td>
+					<td><input type=text id="qty"></td>
+				</tr>
+				<tr>
+					<td>Quantidade de EDs por time:</td>
+					<td><input type=text id="qtyEds"></td>
+				</tr>
+				<tr>
+					<td>Quantidade de EKs por time:</td>
+					<td><input type=text id="qtyEks"></td>
+				</tr>
+				<tr>
+					<td>Quantidade de RPs por time:</td>
+					<td><input type=text id="qtyRps"></td>
+					<td>
+				</tr>
+				<tr>
+					<td>Quantidade de MS por time:</td>
+					<td><input type=text id="qtyMs"><input type=checkbox id="subs">Substituivel</input></td>
+				</tr>
+			</table>
+			 <button onclick=formarTimes()>Formar times</button>
+			 <button onclick=limparTimes()>Limpar times</button>
+		</div>
+	</td>
+</tr>
+<tr>
+	<td>
+		<div id="result">
+
+		</div>
+	</td>
+</tr>
+</table>
+
+
+
+</body>
