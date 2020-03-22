@@ -41,12 +41,17 @@
 			}
 			for (let charName of charsPrioridade) {
 				var char = getCharInfo(charName);
-				prioridadeChars.push(char);
+				if (char != null) {
+					prioridadeChars.push(char);
+				}
+
 			}
 
 			for (let charName of charNames) {
 				var char = getCharInfo(charName);
-				chars.push(char);
+				if (char != null) {
+					chars.push(char);
+				}
 			}
 			console.log(chars);
 			console.log(prioridadeChars);
@@ -96,14 +101,16 @@
 					var found = false;
 					if (prioridadeChars.length > 0) {
 						for (let char of prioridadeChars) {
-							if (char.vocation == pool[0].vocation) {
-								console.log("Allocating prioridade: " + char.name);
-								removeItem(prioridadeChars, char.name);
-								removeItem(pool, char.name);
-								found = true;
-								team.push(char);
-								printPool(pool);
-								break;
+							if (char != null) {
+								if (char.vocation == pool[0].vocation) {
+									console.log("Allocating prioridade: " + char.name);
+									removeItem(prioridadeChars, char.name);
+									removeItem(pool, char.name);
+									found = true;
+									team.push(char);
+									printPool(pool);
+									break;
+								}
 							}
 						}
 					}
