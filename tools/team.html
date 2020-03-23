@@ -1,5 +1,10 @@
+<!DOCTYPE html>
+<html>
+
 <head>
 	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Drakaris Team App</title>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-101258980-5"></script>
 	<script>
@@ -8,6 +13,219 @@
 		gtag('js', new Date());
 
 		gtag('config', 'UA-101258980-5');
+	</script>
+
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			background-color: #f1f1f1;
+		}
+
+		#regForm {
+			background-color: #ffffff;
+			margin: 100px auto;
+			font-family: Raleway;
+			padding: 40px;
+			width: 70%;
+			min-width: 300px;
+		}
+
+		textarea {
+			width: 70%;
+			height: 300px;
+			min-width: 250px;
+		}
+
+		h1 {
+			text-align: center;
+		}
+
+		input {
+			padding: 10px;
+			width: 100%;
+			font-size: 17px;
+			font-family: Raleway;
+			border: 1px solid #aaaaaa;
+		}
+
+		input.invalid {
+			background-color: #ffdddd;
+		}
+
+		.tab {
+			display: none;
+		}
+
+		button {
+			background-color: #4CAF50;
+			color: #ffffff;
+			border: none;
+			padding: 10px 20px;
+			font-size: 17px;
+			font-family: Raleway;
+			cursor: pointer;
+		}
+
+		button:hover {
+			opacity: 0.8;
+		}
+
+		#prevBtn {
+			background-color: #bbbbbb;
+		}
+
+		.step {
+			height: 15px;
+			width: 15px;
+			margin: 0 2px;
+			background-color: #bbbbbb;
+			border: none;
+			border-radius: 50%;
+			display: inline-block;
+			opacity: 0.5;
+		}
+
+		.step.active {
+			opacity: 1;
+		}
+
+		.step.finish {
+			background-color: #4CAF50;
+		}
+	</style>
+</head>
+
+<body onload=fill()>
+	
+	<div id="regForm">
+		<h1>Formador de time da Drakaris</h1>
+		<div class="tab">
+			<ul>
+				<li>Limpe o local chat</li>
+				<li>Peça que todos mandem uma única mensagem no chat</li>
+				<li>Selecione todo o local chat e copie</li>
+				<li>Cole abaixo</li>
+			</ul>
+			<center>
+				<textarea id="localchat">
+
+				</textarea>
+				<br>
+				<button onclick=exemplo()>Preencher com exemplo</button>
+			</center>
+			<br>
+			Prioridade hoje (coloque os nomes certos, separados com vírgula e espaço):
+			<input type="text" id="prioridade">
+			<button onclick=processar();nextPrev(1)>Processar</button>
+		</div>
+		<div class="tab">
+			<div id="vocations">
+				<center>
+					<h1>PARTICIPANTES:</h1>
+				</center><br />
+				<h3>Royal paladins: <span id="rps"></span></h3>
+				<h3>Elder druids: <span id="eds"></span></h3>
+				<h3>Master sorcerers: <span id="ms"></span></h3>
+				<h3>Elite knights: <span id="eks"></span></h3>
+				<h3>Total: <span id="total"></span></h3>
+				<button id="showPlayers" onclick="showTable()">Mostrar/Ocultar detalhes</button>
+				<div id="detalhesDiv" style="display:none">
+					<center>
+						<table id="detalhes" border=true>
+							<tr>
+								<th>#</th>
+								<th>Nome</th>
+								<th>Vocação</th>
+								<th>Level</th>
+								<th>Prioridade?</th>
+							</tr>
+						</table>
+					</center>
+				</div>
+				<h3>Estrutura do time:</h3>
+				<table width=80%>
+					<tr>
+						<td>Quantidade de times:</td>
+						<td><input type=text id="qty"></td>
+					</tr>
+					<tr>
+						<td>Quantidade de EDs por time:</td>
+						<td><input type=text id="qtyEds"></td>
+					</tr>
+					<tr>
+						<td>Quantidade de EKs por time:</td>
+						<td><input type=text id="qtyEks"></td>
+					</tr>
+					<tr>
+						<td>Quantidade de RPs por time:</td>
+						<td><input type=text id="qtyRps"></td>
+						<td>
+					</tr>
+					<tr>
+						<td>Quantidade de MS por time: </td>
+						<td><input type=text id="qtyMs"></td>
+					</tr>
+					<tr>
+						<td>MS é substituível por RP ou ED?</td>
+						<td><input type=checkbox id="subs" /></td>
+					</tr>
+				</table>
+				<center>
+					<button onclick=formarTimes();nextPrev(1)>Formar times</button>
+					<button onclick=limparTimes()>Recomeçar</button>
+					<button onclick=resetarPrioridade()>Resetar prioridade salva</button>
+				</center>
+			</div>
+		</div>
+		<div class="tab">
+			<div id="result">
+
+			</div>
+		</div>
+		<!-- <div style="overflow:auto;">
+			<div style="float:right;">
+				<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+				<button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+			</div>
+		</div> -->
+		<!-- Circles which indicates the steps of the form: -->
+		<div style="text-align:center;margin-top:40px;">
+			<span class="step"></span>
+			<span class="step"></span>
+			<span class="step"></span>
+		</div>
+	</div>
+
+	<script>
+		var currentTab = 0; // Current tab is set to be the first tab (0)
+		showTab(currentTab); // Display the current tab
+
+		function showTab(n) {
+			var x = document.getElementsByClassName("tab");
+			x[n].style.display = "block";
+			fixStepIndicator(n)
+		}
+
+		function nextPrev(n) {
+			var x = document.getElementsByClassName("tab");
+			// if (n == 1) return false;
+			x[currentTab].style.display = "none";
+			currentTab = currentTab + n;
+			showTab(currentTab);
+		}
+
+
+		function fixStepIndicator(n) {
+			var i, x = document.getElementsByClassName("step");
+			for (i = 0; i < x.length; i++) {
+				x[i].className = x[i].className.replace(" active", "");
+			}
+			x[n].className += " active";
+		}
 	</script>
 	<script>
 		var chars = [];
@@ -18,10 +236,77 @@
 		var prioridadeChars = [];
 		var insuficiente = false;
 
+		function exemplo() {
+			var exemplo = `21:14 Conitio [525]: exeta res
+21:14 Roshoot [403]: exevo mas san
+21:14 Marujo Tatuado [454]: exura gran san
+21:14 Roshoot [403]: exura gran san
+21:14 Conitio [525]: exori min
+21:14 Taylon Terni [776]: exeta res
+21:14 Creitos [566]: exura gran mas res
+21:14 Roshoot [403]: exura gran san
+21:14 Marujo Tatuado [454]: exura gran san
+21:14 Conitio [525]: exeta res
+21:14 Taylon Terni [776]: exeta res
+21:14 Roshoot [403]: exura gran san
+21:14 Conitio [525]: exori mas
+21:14 Druidinho Bala [525]: exori mas
+21:14 Lopexx [525]: exori mas
+21:14 Bro [525]: exori mas
+21:14 Lopexx [525]: exori mas
+21:14 Beth Swain [525]: exori mas
+21:14 Grusby [525]: exori mas
+21:14 Jharp [525]: exori mas
+21:14 Meu Binhu [525]: exori mas
+21:14 Roshoot [525]: exori mas
+21:14 Yavii [525]: exori mas
+21:14 Mahtynho [525]: exori mas
+21:14 Re Fry [525]: exori mas
+21:14 Zeitonah [525]: exori mas
+21:14 Ikido [525]: exori mas
+21:14 Maaycon [525]: exori mas
+21:14 Girtrudes [525]: exori mas
+21:14 Pakitzz [525]: exori mas
+21:14 Sonekka [525]: exori mas
+21:14 Druid Cervejeiro [525]: exori mas
+21:14 Heal Raizer [525]: exori mas`
+
+			document.getElementById("localchat").innerHTML = exemplo;
+		}
+
+		function isPrioridade(name) {
+			for (let char of prioridadeChars) {
+				if (char.name == name) {
+					return 'Sim';
+				}
+			}
+			return 'Não';
+		}
+
+		function preencherTabela() {
+			var tabela = document.getElementById("detalhes");
+			var rowIndex = 1;
+			for (let char of chars) {
+				var row = tabela.insertRow(rowIndex);
+				var cellIndex = 0;
+				var cell0 = row.insertCell(cellIndex++);
+				cell0.innerHTML = rowIndex;
+				var cell1 = row.insertCell(cellIndex++);
+				cell1.innerHTML = char.name;
+				var cell2 = row.insertCell(cellIndex++);
+				cell2.innerHTML = char.vocation;
+				var cell3 = row.insertCell(cellIndex++);
+				cell3.innerHTML = char.level;
+				var cell4 = row.insertCell(cellIndex++);
+				cell4.innerHTML = isPrioridade(char.name);
+				rowIndex++;
+			}
+		}
+
 		function processar() {
 			var prioridade = document.getElementById("prioridade");
 			var charNames = new Set();
-			var charsPrioridade = prioridade.value!=""?prioridade.value.split(", "):[];
+			var charsPrioridade = prioridade.value != "" ? prioridade.value.split(", ") : [];
 			console.log(charsPrioridade);
 			var text = document.getElementById("localchat");
 			var lines = text.value.split("\n");
@@ -58,6 +343,7 @@
 			console.log(chars);
 			console.log(prioridadeChars);
 			countVocations(chars);
+			preencherTabela();
 		}
 
 		function printPool(pool) {
@@ -127,7 +413,7 @@
 
 				} else {
 					if (!subs) {
-						result.innerHTML = "Número insuficiente de pessoas pra formação desejada. Por favor, limpe os times e comece novamente. <br>"
+						result.innerHTML = "Número insuficiente de pessoas pra formação desejada. Por favor, limpe os times e comece novamente. <br> <button onclick=limparTimes()>Recomeçar</button>"
 						insuficiente = true;
 					}
 					return;
@@ -180,7 +466,7 @@
 					leftOver = leftOver.slice(0, -2);
 					console.log(leftOver);
 				}
-				result.innerHTML += "<br> Prioridade amanhã: " + leftOver;
+				result.innerHTML += "<br> Prioridade amanhã: " + leftOver + " <br> <button onclick=limparTimes()>Recomeçar</button>";
 				localStorage.setItem("prioridade", leftOver);
 			}
 		}
@@ -248,100 +534,18 @@
 		function resetarPrioridade() {
 			localStorage.removeItem("prioridade");
 		}
+
+		function showTable() {
+			var table = document.getElementById("detalhesDiv");
+			console.log(table.style.display);
+			if (table.style.display == 'inline') {
+				table.style.display = 'none';
+			} else {
+				table.style.display = 'inline';
+			}
+		}
 	</script>
-</head>
 
-<body onload=fill()>
-	<table>
-		<tr>
-			<td>
-				<ul>
-					<li>Limpe o local chat</li>
-					<li>Peça que todos mandem uma única mensagem no chat</li>
-					<li>Selecione todo o local chat e copie</li>
-					<li>Cole abaixo</li>
-				</ul>
-				<textarea id="localchat" style="width:300; height:300">
-21:14 Conitio [525]: exeta res
-21:14 Roshoot [403]: exevo mas san
-21:14 Marujo Tatuado [454]: exura gran san
-21:14 Roshoot [403]: exura gran san
-21:14 Conitio [525]: exori min
-21:14 Taylon Terni [776]: exeta res
-21:14 Creitos [566]: exura gran mas res
-21:14 Roshoot [403]: exura gran san
-21:14 Marujo Tatuado [454]: exura gran san
-21:14 Conitio [525]: exeta res
-21:14 Taylon Terni [776]: exeta res
-21:14 Roshoot [403]: exura gran san
-21:14 Conitio [525]: exori mas
-21:14 Druidinho Bala [525]: exori mas
-21:14 Lopexx [525]: exori mas
-21:14 Bro [525]: exori mas
-21:14 Lopexx [525]: exori mas
-21:14 Beth Swain [525]: exori mas
-21:14 Grusby [525]: exori mas
-21:14 Jharp [525]: exori mas
-21:14 Meu Binhu [525]: exori mas
-21:14 Roshoot [525]: exori mas
-21:14 Yavii [525]: exori mas
-21:14 Mahtynho [525]: exori mas
-21:14 Re Fry [525]: exori mas
-21:14 Zeitonah [525]: exori mas
-21:14 Ikido [525]: exori mas
-21:14 Maaycon [525]: exori mas
-21:14 Girtrudes [525]: exori mas
-21:14 Pakitzz [525]: exori mas
-21:14 Sonekka [525]: exori mas
-21:14 Druid Cervejeiro [525]: exori mas
-21:14 Heal Raizer [525]: exori mas
-		</textarea><br>
-				Prioridade hoje: <br> (coloque os nomes certos, separados com vírgula e espaço):<br>
-				<input type="text" id="prioridade">
-				<button onclick=processar()>Processar</button>
-			</td>
-			<td>
-				<div id="vocations" style=visibility:hidden>
-					<center>
-						<h1>PARTICIPANTES:</h1>
-					</center><br />
-					<h3>Royal paladins: <span id="rps"></span></h3>
-					<h3>Elder druids: <span id="eds"></span></h3>
-					<h3>Master sorcerers: <span id="ms"></span></h3>
-					<h3>Elite knights: <span id="eks"></span></h3>
-					<h3>Total: <span id="total"></span></h3>
-					<h3>Estrutura do time:</h3>
-					<table>
-						<tr>
-							<td>Quantidade de times:</td>
-							<td><input type=text id="qty"></td>
-						</tr>
-						<tr>
-							<td>Quantidade de EDs por time:</td>
-							<td><input type=text id="qtyEds"></td>
-						</tr>
-						<tr>
-							<td>Quantidade de EKs por time:</td>
-							<td><input type=text id="qtyEks"></td>
-						</tr>
-						<tr>
-							<td>Quantidade de RPs por time:</td>
-							<td><input type=text id="qtyRps"></td>
-							<td>
-						</tr>
-						<tr>
-							<td>Quantidade de MS por time:</td>
-							<td><input type=text id="qtyMs"><input type=checkbox id="subs">Substituivel</input></td>
-						</tr>
-					</table>
-					<button onclick=formarTimes()>Formar times</button>
-					<button onclick=limparTimes()>Limpar times</button>
-					<button onclick=resetarPrioridade()>Resetar prioridade salva</button>
-				</div>
-			</td>
-		</tr>
-	</table>
-	<div id="result">
-
-	</div>
 </body>
+
+</html>
