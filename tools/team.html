@@ -21,7 +21,7 @@
 		function processar() {
 			var prioridade = document.getElementById("prioridade");
 			var charNames = new Set();
-			var charsPrioridade = prioridade.value.split(", ");
+			var charsPrioridade = prioridade.value!=""?prioridade.value.split(", "):[];
 			console.log(charsPrioridade);
 			var text = document.getElementById("localchat");
 			var lines = text.value.split("\n");
@@ -29,8 +29,8 @@
 			for (i = 0; i < lines.length; i++) {
 				if (lines[i].includes("[")) {
 					var splitted = lines[i].split(" ");
-					charName = "";
-					index = 1
+					charName = splitted[1];
+					index = 2
 					while (!splitted[index].includes("[")) {
 						charName += " " + splitted[index];
 						index++;
@@ -39,12 +39,14 @@
 				}
 
 			}
-			for (let charName of charsPrioridade) {
-				var char = getCharInfo(charName);
-				if (char != null) {
-					prioridadeChars.push(char);
-				}
+			if (charsPrioridade.length > 0) {
+				for (let charName of charsPrioridade) {
+					var char = getCharInfo(charName);
+					if (char != null) {
+						prioridadeChars.push(char);
+					}
 
+				}
 			}
 
 			for (let charName of charNames) {
@@ -214,8 +216,10 @@
 				var char = localStorage.getItem(name);
 				if (char == null) {
 					var request = httpGet(name);
-					var char = JSON.parse(request).characters.data;
-					localStorage.setItem(name, JSON.stringify(char));
+					if (request != null) {
+						var char = JSON.parse(request).characters.data;
+						localStorage.setItem(name, JSON.stringify(char));
+					}
 				} else {
 					char = JSON.parse(char);
 				}
@@ -228,10 +232,13 @@
 		}
 
 		function httpGet(name) {
-			var xmlHttp = new XMLHttpRequest();
-			xmlHttp.open("GET", "https://api.tibiadata.com/v2/characters/" + name + ".json", false);
-			xmlHttp.send(null);
-			return xmlHttp.responseText;
+			if (name != '') {
+				var xmlHttp = new XMLHttpRequest();
+				var url = "https://api.tibiadata.com/v2/characters/" + name.toLowerCase() + ".json";
+				xmlHttp.open("GET", url, false);
+				xmlHttp.send(null);
+				return xmlHttp.responseText;
+			}
 		}
 		function fill() {
 			var prioridade = localStorage.getItem("prioridade");
