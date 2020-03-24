@@ -372,7 +372,7 @@
 			if (charsPrioridade.length > 0) {
 				for (let charName of charsPrioridade) {
 					var data = charName.split(':');
-					var char = { name: data[0], vocation: getVocation(data[1]), level: data[2] };
+					var char = { name: data[0], vocation: getVocation(data[1].toLowerCase()), level: data[2] };
 					if (char != null) {
 						prioridadeChars.push(char);
 
