@@ -1,0 +1,155 @@
+---
+title: Laboratório de Resolução de Problemas
+in_menu: true
+sort_info: 3
+---
+# Laboratório de Resolução de Problemas
+
+<BR/>
+Horário: segundas e quartas de 20h às 22h 
+
+Sala: Lab 307
+
+Sala de aula virtual da disciplina: usaremos o [Google Classroom](http://classroom.google.com/) para as discussões e avisos. A sala de aula no Google Classroom será usada também para divulgar avisos gerais e para dúvidas. <BR/>
+
+
+## Monitoria
+
+Horários e local de atendimento: consulte a [página da monitoria](http://profs.ic.uff.br/~troy/Tutoring/2024.html). Além da monitores, os alunos também podem pedir ajuda aos Tutores, caso eles estejam disponíveis.
+
+## Foco
+
+O foco dessa disciplina é desenvolver no aluno a capacidade de resolução de problemas de programação. Para isso, o aluno irá praticar a resolução de problemas, além de estudar técnicas de depuração e teste de programas.
+
+## Avaliação
+
+$$ T_n $$ = Trabalhos práticos (de 1 a n)
+
+
+$$ Média = \frac{( \sum_{i=1}^{n} T_i )}{n}$$
+
+
+**APROVADO**
+
+$$Presença \geq 75\% ~ E ~ Média \geq 6$$
+
+**VERIFICAÇÃO SUPLEMENTAR**
+
+$$Presença \geq 75\% ~ 4 ~ \leq Média < 6$$
+
+Será aprovado na VS se tirar nota maior ou igual a 6.
+
+**REPROVADO**
+
+Caso contrário
+
+
+
+## Presença
+
+De acordo com o [Regulamento dos Cursos de Graduação](http://www.uff.br/sites/default/files/001-2015_regulamento_do_curso_de_graduacao_0.pdf), a presença mínima necessária para aprovação é de 75% das aulas (Art. 96) e não há abono de faltas sem documentação (Art. 103).
+
+## Bibliografia
+
+Paul Barry, Use a Cabeça! Programação, Editora Alta Books.
+
+Paul Barry, Use a Cabeça! Python, Editora Alta Books.
+
+Furlan, M., Gomes, M., Soares, M., Concilio, R., 2005, Algoritmos e Lógica de Programação, Editora Thomson.
+
+## Ferramentas
+
+* [Interpretador Python](https://www.python.org/downloads/)
+* [PyCharm](https://www.jetbrains.com/pycharm-educational/)
+* [VSCode](https://code.visualstudio.com/)
+* Interpretadores Online: 
+    * [Replit](https://replit.com/)
+    * [Online Python](https://www.online-python.com/) 
+    * [Google Colaboratory](https://colab.research.google.com/)
+* Existem apps para tablets e celulares que permitem programar em Python. Faça a busca na loja de aplicativos do seu aparelho. Sugestões: [QPython](http://www.qpython.com/) (para Android) e [Python 3.4](https://itunes.apple.com/us/app/python-3-4-for-ios/id583476348?mt=8) (para IOS).
+
+O aluno tem liberdade de utilizar a IDE Python de sua preferência. Contudo, nas atividades de sala de aula será utilizado o [VSCode](https://code.visualstudio.com/).
+
+## Dicas para uso do BeeCrowd
+
+O [BeeCrowd](https://www.beecrowd.com.br/judge/pt/login) funciona testando a saída esperada do problema com a saída gerada pelo seu programa. Se o conteúdo estiver correto, ele diz que está correto, mas se tem algum erro de apresentação (um espaço a mais, que seja), ele diz que houve *Presentation Error*. Para corrigir os erros de apresentação do seu programa, aqui vão algumas dicas: 
+
+* Não coloque mensagem no comando de *input*. Por exemplo, ao invés de: 
+
+
+```
+nome = input("Digite o nome: ")
+```
+
+Faça simplesmente: 
+
+```
+nome = input()
+```
+
+* Se usar o print para imprimir uma mensagem e o valor de uma variável, lembre-se de que o interpretador Python adiciona um espaço em branco automaticamente entre a mensagem e o valor da variável. Por exemplo, o comando: 
+
+
+```
+a = 10
+```
+
+```
+print("A =", a) 
+```
+
+imprime na tela: 
+
+
+```
+A = 10
+```
+
+
+Note que na saída gerada pelo programa, há um espaço, após a igualdade, que foi adicionado automaticamente pelo interpretador Python. 
+
+## Cronograma
+
+{: style="border-collapse: collapse; width: 100%; text-align: center;" border="1"}
+|Data|Atividade
+|--
+|23/09/2024| [Apresentação da disciplina]()
+|25/09/2024| [Introdução à Programação]()
+|30/09/2024| [Organização de Programas Python]()
+|02/10/2024| Prática ambientação
+|07/10/2024| Depuração e teste de programas
+|09/10/2024| Depuração e teste de programas
+|14/10/2024| **SEM AULA - AGENDA ACADÊMICA**
+|16/10/2024| **SEM AULA - AGENDA ACADÊMICA**
+|21/10/2024| Prática operadores
+|23/10/2024| Prática operadores
+|28/10/2024| **SEM AULA - FERIADO**
+|30/10/2024| Prática estruturas de decisão
+|04/11/2024| Prática estruturas de decisão
+|06/11/2024| Prática estruturas de decisão
+|11/11/2024| Exercício pontuado
+|13/11/2024| Prática estruturas de repetição
+|18/11/2024| Prática estruturas de repetição
+|20/11/2024| **SEM AULA - FERIADO**
+|25/11/2024| Prática estruturas de repetição
+|27/11/2024| Prática manipulação de strings
+|02/12/2024| Prática manipulação de strings
+|04/12/2024| Prática manipulação de strings
+|09/12/2024| Exercício pontuado
+|11/12/2024| Exercício pontuado
+|16/12/2024| Prática listas
+|18/12/2024| Prática listas
+|23/12/2024| **SEM AULA** (Recesso)
+|25/12/2024| **SEM AULA** (Recesso)
+|30/12/2024| **SEM AULA** (Recesso)
+|01/01/2025| **SEM AULA** (Recesso)
+|06/01/2025| Prática listas
+|08/01/2025| Prática matrizes
+|13/01/2025| Prática matrizes
+|15/01/2025| Prática matrizes
+|20/01/2025| Exercício pontuado
+|22/01/2025| **SEGUNDA CHAMADA**
+|27/01/2025| VISTA DE SEGUNDA CHAMADA (sala 540)
+|29/01/2025| **VS**
+|03/02/2025| **SEM AULA**
+|05/02/2025| VISTA DE VS (sala 540)

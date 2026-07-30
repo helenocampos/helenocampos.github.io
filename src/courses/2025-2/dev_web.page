@@ -1,0 +1,92 @@
+---
+title: Introdução ao Desenvolvimento Web
+in_menu: true
+sort_info: 2
+---
+# TCC00361 - Introdução ao Desenvolvimento Web
+
+<BR/>
+Horário: sextas-feiras das 18h às 22h
+
+Sala: Laboratório 306
+
+Sala de aula virtual da disciplina: usaremos o [Google Classroom](http://classroom.google.com/) para as discussões e avisos. A sala de aula no Google Classroom será usada também para divulgar avisos gerais e para dúvidas. <BR/>
+
+
+### Avaliação
+
+*Média* = (2 x *Prova 1* + 2 x *Prova 2* + *Trabalho*) / 5
+
+
+**APROVADO**
+
+$$Presença \geq 75\% ~ E ~ Média \geq 6$$
+
+**VERIFICAÇÃO SUPLEMENTAR**
+
+$$Presença \geq 75\% ~ 4 ~ \leq Média < 6$$
+
+Será aprovado na VS se tirar nota maior ou igual a 6.
+
+**REPROVADO**
+
+Caso contrário
+
+
+### Trabalho
+
+O curso terá um trabalho feito em grupos de 3 a 5 participantes. Consiste em desenvolver um sistema de gerenciamento de biblioteca, utilizando as tecnologias estudadas durante o semestre. O sistema deve permitir o cadastro de usuários e livros, controle de empréstimos e devoluções, exibição de histórico de empréstimos, aplicação de penalidades por atraso e geração de relatórios administrativos.
+
+Como resultado final espera-se uma apresentação do trabalho (10 a 15 minutos) e a entrega do código. Essas atividades devem ocorrer na data estipulada (ver seção Cronograma).
+
+Obs.: atraso na entrega do Trabalho terá uma multa de um ponto por dia.
+
+
+**O nome dos integrantes do grupo devem ser enviados por email até o dia 15/09/2025.**
+
+
+
+## Presença
+
+De acordo com o [Regulamento dos Cursos de Graduação](http://www.uff.br/sites/default/files/001-2015_regulamento_do_curso_de_graduacao_0.pdf), a presença mínima necessária para aprovação é de 75% das aulas (Art. 96) e não há abono de faltas sem documentação (Art. 103).
+
+### Listas
+
+As listas não precisam ser entregues ao professor. O intuito é servirem como revisão de conteúdo de outras disciplinas necessárias para essa e de apoio para fixar a matéria dada em sala. Não serão fornecidos gabaritos das listas. Enviem as dúvidas específicas no Google Classroom.
+
+* [Lista de Programação em Java](lista1_dev-web.pdf)
+* [Lista de Programação Web](lista2_dev-web.pdf)
+
+Obs.: Caso tenha dificuldade de fazer alguma questão, verifique se não é referente a uma matéria que está para ser apresentada nas próximas aulas.
+
+### Ferramentas
+
+No curso utilizaremos a versão mais recente da [IDE NetBeans](https://netbeans.apache.org/front/main/download/) na distribuição Java EE e o Servidor Java EE Glassfish, que vem junto com a IDE NetBeans. Ambos são gratuitos e estão disponíveis para os principais sistemas operacionais (Linux, Mac e Windows).
+
+### Bibliografia
+
+Há diversos livros sobre o assunto que podem ser consultados. Há a opção de consultar gratuitamente os tutoriais oficiais da Oracle referentes a [Java](http://docs.oracle.com/javase/tutorial/), [Servlets](http://docs.oracle.com/javaee/7/tutorial/servlets.htm), [JDBC](http://docs.oracle.com/javase/tutorial/jdbc/) e [JSP](http://docs.oracle.com/javaee/5/tutorial/doc/bnagx.html). Além disso, a Caelum disponibiliza gratuitamente apostilas em português de [Java](http://www.caelum.com.br/apostila-java-orientacao-objetos/), [Servlets](http://www.caelum.com.br/apostila-java-web/servlets/), [JDBC](http://www.caelum.com.br/apostila-java-web/bancos-de-dados-e-jdbc/) e [JSP](http://www.caelum.com.br/apostila-java-web/javaserver-pages/). Por fim, os seguintes livros têm uma didática diferenciada: "Use a Cabeça Java", segunda edição, de Kathy Sierra e Bert Bates, e "Use a Cabeça Servlets & JSP", segunda edição, de Brian Basham, Kathy Sierra e Bert Bates.
+
+## Cronograma
+
+{: style="border-collapse: collapse; width: 100%; text-align: center;" border="1"}  
+| Data        | Atividade                                 |
+|-------------|--------------------------------------------|
+| 22/08/2025  | Apresentação da disciplina                 |
+| 29/08/2025  | [HTML]()                                   |
+| 05/09/2025  | [Folhas de estilo (CSS)]()                 |
+| 12/09/2025  | [Arquiteturas de sistemas web]()           |
+| 19/09/2025  | **Sem aula**       |
+| 26/09/2025  | **Prova 1**       |
+| 03/10/2025  | [Servlets]()                               |
+| 10/10/2025  | [Servlets]()                               |
+| 17/10/2025  | [Servlets]()                               |
+| 24/10/2025  | **Sem aula** – Semana acadêmica            |
+| 31/10/2025  | [JDBC]()                                   |
+| 07/11/2025  | [JSP]()                                    |
+| 14/11/2025  | [MVC]()                                    |
+| 21/11/2025  | **Prova 2**                                |
+| 28/11/2025  | **Apresentação de trabalhos**              |
+| 05/12/2025  | **VR**                                     |
+| 12/12/2025  | **VS**                                     |
+

@@ -1,0 +1,53 @@
+---
+title: Services
+in_menu: true
+sort_info: 5
+---
+## Services
+
+Service to the software engineering research community: program committees,
+peer reviewing for conferences and journals, and related activities.
+
+I was awarded **Distinguished Reviewer** of the Research Track of the
+XXXIX Brazilian Symposium on Software Engineering (SBES 2025), by the
+Brazilian Computer Society (SBC) and its Special Committee on Software
+Engineering.
+
+<!-- AUTO-INICIO: gerado por _scripts/gerar_services.py -->
+
+### Program committees
+
+**2026**
+
+* Program Committee member --- SBES 2026, Research Track
+* Program Committee member --- SBES 2026, Insightful Ideas and Emerging Results Track
+* Program Committee member --- ESEM 2026, Registered Reports Track
+
+**2025**
+
+* Program Committee member --- SBES 2025, Research Track
+* Program Committee member --- SBES 2025, Insightful Ideas and Emerging Results Track
+
+### Journal reviewing
+
+* Reviewer --- EMSE (2025)
+
+### Reviewing activity
+
+| Year | Venue | Type | Papers reviewed |
+|---|---|---:|---:|
+| 2026 | SBES Research | Conference | 3 |
+| 2026 | SBES IIER | Conference | 4 |
+| 2026 | ESEM Registered Reports | Conference | 3 |
+| 2025 | SBES Research | Conference | 3 |
+| 2025 | SBES IIER | Conference | 3 |
+| 2025 | EMSE | Journal | 1 |
+| | **Total** | | **17** |
+
+17 papers reviewed in total: 16 for conferences and 1 for journal.
+
+<!-- AUTO-FIM -->
+
+If you are looking for a reviewer in software merge, search-based software
+engineering, software testing or configuration management, feel free to
+[get in touch](contact.html).
