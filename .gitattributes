@@ -1,0 +1,17 @@
+# Sem isto o git tenta diffar PDFs como texto (o src/ensino/livro.pdf virou um
+# diff de 82 mil linhas no commit da reestruturacao).
+*.pdf   binary
+*.zip   binary
+*.jpg   binary
+*.jpeg  binary
+*.png   binary
+*.gif   binary
+*.ico   binary
+
+# Normaliza fim de linha no repositorio, deixando o checkout nativo em cada SO.
+*.html  text
+*.css   text
+*.page  text
+*.template text
+*.md    text
+*.ps1   text eol=crlf
