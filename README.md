@@ -91,6 +91,11 @@ E por isso que material antigo em HTML puro (`ensino/`, `rito/`,
   mas significa que remover algo de `src/` nao remove da raiz: e preciso apagar o
   arquivo gerado na mao e commitar a delecao. O `publicar.ps1` destaca delecoes em
   amarelo justamente por isso.
+
+  Ha um caso vivo disso: **`courses/2025-2/prog.html`** foi gerado em agosto/2025,
+  o `prog.page` correspondente saiu do `src/` depois, e a pagina continua no ar
+  com o cabecalho antigo ("Postdoc, IC/UFF"), fora do menu e so alcancavel por
+  URL direta. Ou se apaga o arquivo, ou se recria o `.page`.
 - `.nojekyll` desliga o processamento pelo Jekyll no GitHub Pages — o site ja vem
   pronto do webgen.
 - Como o Pages serve o repositorio inteiro, `src/` tambem fica acessivel na web.
