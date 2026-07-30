@@ -5,13 +5,20 @@ sort_info: 5
 ---
 ## Services
 
-Service to the software engineering research community: program committees,
-peer reviewing for conferences and journals, and related activities.
+Service to the software engineering research community: organizing and program
+committees, and peer reviewing for conferences and journals.
 
 I was awarded **Distinguished Reviewer** of the Research Track of the
 XXXIX Brazilian Symposium on Software Engineering (SBES 2025), by the
 Brazilian Computer Society (SBC) and its Special Committee on Software
 Engineering.
+
+### Organizing committees
+
+**2026**
+
+* Web Presence Co-chair --- MSR 2026 (International Conference on Mining
+  Software Repositories), co-located with ICSE 2026, Rio de Janeiro, Brazil
 
 <!-- AUTO-INICIO: gerado por _scripts/gerar_services.py -->
 
@@ -28,26 +35,29 @@ Engineering.
 * Program Committee member --- SBES 2025, Research Track
 * Program Committee member --- SBES 2025, Insightful Ideas and Emerging Results Track
 
-### Journal reviewing
+**2021**
 
-* Reviewer --- EMSE (2025)
+* Shadow Program Committee member --- MSR 2021, Shadow PC
 
-### Reviewing activity
+### Ad-hoc reviewing
 
-| Year | Venue | Type | Papers reviewed |
-|---|---|---:|---:|
-| 2026 | SBES Research | Conference | 3 |
-| 2026 | SBES IIER | Conference | 4 |
-| 2026 | ESEM Registered Reports | Conference | 3 |
-| 2025 | SBES Research | Conference | 3 |
-| 2025 | SBES IIER | Conference | 3 |
-| 2025 | EMSE | Journal | 1 |
-| | **Total** | | **17** |
+Reviews written as an ad-hoc reviewer, several of them as a co-reviewer alongside a program committee member or editorial board member.
 
-17 papers reviewed in total: 16 for conferences and 1 for journal.
+**Journals**
+
+* EMSE (Empirical Software Engineering) --- 2025
+* JSS (Journal of Systems and Software) --- 2019 (co-reviewed with Leonardo Murta)
+* JSS (Journal of Systems and Software) --- 2022 (co-reviewed with Leonardo Murta)
+* SQJ (Software Quality Journal) --- 2021 (co-reviewed with Vânia Neves)
+* TSE (IEEE Transactions on Software Engineering) --- 2020 (co-reviewed with Leonardo Murta)
+
+**Conferences**
+
+* CHASE (International Conference on Cooperative and Human Aspects of Software Engineering) --- 2019 (co-reviewed with Leonardo Murta)
+* ESEM (ACM/IEEE International Symposium on Empirical Software Engineering and Measurement) --- 2019 (co-reviewed with Leonardo Murta)
+* ICSME (International Conference on Software Maintenance and Evolution) --- 2020 (co-reviewed with Leonardo Murta)
+* QUATIC (International Conference on the Quality of Information and Communications Technology) --- 2021
+* SBES (Simpósio Brasileiro de Engenharia de Software) --- 2023 (co-reviewed with Vânia Neves)
+* SBES (Simpósio Brasileiro de Engenharia de Software) --- 2024 (co-reviewed with Leonardo Murta)
 
 <!-- AUTO-FIM -->
-
-If you are looking for a reviewer in software merge, search-based software
-engineering, software testing or configuration management, feel free to
-[get in touch](contact.html).
