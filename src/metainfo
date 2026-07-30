@@ -1,0 +1,16 @@
+--- paths
+[/**/*.pdf, /**/*.zip, /**/*.java, /**/*.sql, /.htaccess]:
+  handler: copy
+
+--- alcn
+courses/:
+  title: Courses
+  proxy_path: 2025-2/dev_web.html
+  in_menu: true
+  sort_info: 2
+
+people/:
+  title: People
+  proxy_path: current.html
+  in_menu: true
+  sort_info: 3

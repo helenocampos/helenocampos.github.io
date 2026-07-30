@@ -1,0 +1,22 @@
+---
+title: Current
+in_menu: true
+sort_info: 1
+---
+
+<style>
+li {
+	width: 350px;
+	height: 120px;
+	display: inline-block;
+}
+</style>
+
+
+## Master Students
+* ![Picture](pictures/stock.jpg)|Ygor Wesley Soares Moreira Lima<br/>2025<br/> (co-advisor) Mestrado em Computação (UFF) 
+
+
+## Undergrad Students
+* |![Picture](pictures/stock.jpg)|Pedro Trinkenreich Henrique<br/>2025<br/> (co-advisor) Bacharelado em Ciência da Computação (UFF) 
+* |![Picture](pictures/stock.jpg)|Letícia Quintão Costa<br/>2026<br/> (co-advisor) Bacharelado em Ciências Exatas (UFJF) 

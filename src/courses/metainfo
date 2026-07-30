@@ -1,0 +1,18 @@
+--- alcn
+2025-2/:
+  title: 2025.2
+  proxy_path: dev_web.html
+  in_menu: true
+  sort_info: 79
+
+2025-1/:
+  title: 2025.1
+  proxy_path: prog.html
+  in_menu: true
+  sort_info: 80
+
+2024-2/:
+  title: 2024.2
+  proxy_path: lab-es.html
+  in_menu: true
+  sort_info: 81

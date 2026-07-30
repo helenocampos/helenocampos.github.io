@@ -1,0 +1,87 @@
+---
+title: Programação Orientada a Objetos
+in_menu: true
+sort_info: 1
+---
+# TCC00357 - Programação Orientada A Objetos I
+<BR/>
+Horário: segundas das 18h às 22h 
+
+Local: Laboratório 306
+
+
+
+Sala de aula virtual da disciplina: usaremos o [Google Classroom](http://classroom.google.com/) para as discussões e avisos. A sala de aula no Google Classroom será usada também para divulgar avisos gerais e para dúvidas. <BR/>
+
+
+## Monitoria
+
+Horários e local de atendimento: consulte a [página da monitoria](http://profs.ic.uff.br/~troy/Tutoring/2025.html). Além dos monitores, os alunos também podem pedir ajuda aos Tutores, caso eles estejam disponíveis.
+
+## Avaliação
+
+P1 = Prova sem consulta
+
+P2 = Prova sem consulta
+
+$$Média = \frac{P1 + P2}{2}$$
+
+**APROVADO**
+
+$$Presença \geq 75\% ~ E ~ Média \geq 6$$
+
+**VERIFICAÇÃO SUPLEMENTAR**
+
+$$Presença \geq 75\% ~ 4 ~ \leq Média < 6$$
+
+Será aprovado na VS se tirar nota maior ou igual a 6.
+
+**REPROVADO**
+
+Caso contrário
+
+## Listas de exercícios
+
+As listas de exercícios não precisam ser entregues ao professor. O intuito é servir como apoio para fixar a matéria dada em sala. Não será fornecido gabarito da lista, porém vários dos exercícios serão praticados em aula. Enviem as dúvidas específicas para o Google Classroom.
+
+* [Lista 1](lista1_oo.pdf)
+* [Lista 2](lista2_oo.pdf)
+
+Obs.: Caso tenha dificuldade de fazer alguma questão, verifique se não é referente a uma matéria que está para ser apresentada nas próximas aulas.
+
+## Ferramentas
+
+No curso utilizaremos a versão mais recente da IDE NetBeans na distribuição Java SE. O NetBeans é gratuito e está disponível para os principais sistemas operacionais (Linux, Mac e Windows).
+
+## Presença
+
+De acordo com o [Regulamento dos Cursos de Graduação](http://www.uff.br/sites/default/files/001-2015_regulamento_do_curso_de_graduacao_0.pdf), a presença mínima necessária para aprovação é de 75% das aulas (Art. 96) e não há abono de faltas sem documentação (Art. 103).
+
+## Bibliografia
+
+Há diversos livros sobre o assunto que podem ser consultados. Há a opção de consultar gratuitamente o [tutorial oficial da Oracle](http://docs.oracle.com/javase/tutorial/). Além disso, a Caelum disponibiliza gratuitamente uma [apostila em português sobre orientação a objetos](http://www.caelum.com.br/apostila-java-orientacao-objetos/) e outra [apostila em português que trata de interface gráfica](https://www.caelum.com.br/apostila-java-testes-xml-design-patterns/), dentre outros assuntos fora do escopo deste curso. Por fim, o seguinte livro tem uma didática diferenciada: “Use a Cabeça Java”, segunda edição, de Kathy Sierra e Bert Bates.
+
+
+## Cronograma  
+
+{: style="border-collapse: collapse; width: 100%; text-align: center;" border="1"}
+| Data       | Atividade                                                                 |
+|------------|---------------------------------------------------------------------------|
+| 18/08/2025 | Apresentação da disciplina                                                |
+| 25/08/2025 | Organização de programas em Java                                          |
+| 01/09/2025 | Operadores e Estruturas de Decisão / Estruturas de Repetição e String    |
+| 08/09/2025 | Variáveis compostas / Subprogramação                                      |
+| 15/09/2025 | Introdução a OO                                                           |
+| 22/09/2025 | **Sem aula**                                                          |
+| 29/09/2025 | Introdução a OO                                                           |
+| 06/10/2025 | **Prova 1**                                                               |
+| 13/10/2025 | Herança e polimorfismo                                                    |
+| 20/10/2025 | **Sem aula – Semana acadêmica**                                           |
+| 27/10/2025 | **Sem aula – Ponto facultativo**                                          |
+| 03/11/2025 | Tratamento de exceções / Coleções                                         |
+| 10/11/2025 | Threads                                                                   |
+| 17/11/2025 | **Prova 2**                                                               |
+| 24/11/2025 | **Segunda chamada (VR)**                                                  |
+| 01/12/2025 | **Sem aula**                                                              |
+| 08/12/2025 | **VS**                                                                    |
+| 15/12/2025 | **Sem aula**                                                              |

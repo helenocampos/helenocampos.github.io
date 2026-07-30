@@ -1,0 +1,167 @@
+---
+title: Programação de Computadores
+in_menu: false
+sort_info: 2
+---
+# Programação de Computadores
+
+<BR/>
+Horário: terças e quintas de 11h às 13h 
+
+Sala: Sala 304 (terças), Lab 303 (quintas)
+
+Sala de aula virtual da disciplina: usaremos o [Google Classroom](http://classroom.google.com/) para as discussões e avisos. A sala de aula no Google Classroom será usada também para divulgar avisos gerais e para dúvidas. <BR/>
+
+
+## Monitoria
+
+Horários e local de atendimento: consulte a [página da monitoria](http://profs.ic.uff.br/~troy/Tutoring/2024.html). Além da monitores, os alunos também podem pedir ajuda aos Tutores, caso eles estejam disponíveis.
+
+## Ementa
+
+- Algoritmos e Lógica de Programação
+- Introdução ao Ambiente de Desenvolvimento Python
+- Tipos de Dados
+- Operadores
+- Comandos e Estruturas de Controle;
+- Agregados Homogêneos: Vetores e Matrizes; 
+- Agregados Heterogêneos; 
+- Subprogramação e Escopo de Variáveis
+
+## Avaliação
+
+P1 = Prova sem consulta
+
+P2 = Prova sem consulta
+
+$$Média = \frac{P1 + P2}{2}$$
+
+**APROVADO**
+
+$$Presença \geq 75\% ~ E ~ Média \geq 6$$
+
+**VERIFICAÇÃO SUPLEMENTAR**
+
+$$Presença \geq 75\% ~ 4 ~ \leq Média < 6$$
+
+Será aprovado na VS se tirar nota maior ou igual a 6.
+
+**REPROVADO**
+
+Caso contrário
+
+## Exercícios no BeeCrowd
+
+Diversos exercícios serão disponibilizadas durante o curso. Todos terão data de entrega marcada no [BeeCrowd](https://www.beecrowd.com.br/judge/pt/login) -- ver código da turma no [Google Classroom](http://classroom.google.com/). Alunos que entregarem os exercícios no prazo e corretos podem ser aprovados direto caso tenham ficado com média entre 5,5 e 5,9. Da mesma forma, terão direto à VS caso tenham ficado com média entre 3,5 e 3,9.
+
+## Video-aulas no Youtube
+
+Caso você tenha perdido alguma aula ou deseje rever algum ponto específico, é possível assistir às aulas da disciplina gravadas por outro professor. Acesse a [playlist no canal do IC](https://www.youtube.com/playlist?list=PLclUQno6PMpSYq0XLXgn7BTqloLXIso7q).
+
+## Presença
+
+De acordo com o [Regulamento dos Cursos de Graduação](http://www.uff.br/sites/default/files/001-2015_regulamento_do_curso_de_graduacao_0.pdf), a presença mínima necessária para aprovação é de 75% das aulas (Art. 96) e não há abono de faltas sem documentação (Art. 103).
+
+## Bibliografia
+
+Paul Barry, Use a Cabeça! Programação, Editora Alta Books.
+
+Paul Barry, Use a Cabeça! Python, Editora Alta Books.
+
+Furlan, M., Gomes, M., Soares, M., Concilio, R., 2005, Algoritmos e Lógica de Programação, Editora Thomson.
+
+## Ferramentas
+
+* [Interpretador Python](https://www.python.org/downloads/)
+* [PyCharm](https://www.jetbrains.com/pycharm-educational/)
+* Interpretadores Online: 
+    * [Replit](https://replit.com/)
+    * [Online Python](https://www.online-python.com/) 
+    * [Google Colaboratory](https://colab.research.google.com/)
+* Existem apps para tablets e celulares que permitem programar em Python. Faça a busca na loja de aplicativos do seu aparelho. Sugestões: [QPython](http://www.qpython.com/) (para Android) e [Python 3.4](https://itunes.apple.com/us/app/python-3-4-for-ios/id583476348?mt=8) (para IOS).
+
+O aluno tem liberdade de utilizar a IDE Python de sua preferência. Contudo, nas atividades de sala de aula será utilizado o [VSCode](https://code.visualstudio.com/).
+
+## Dicas para uso do BeeCrowd
+
+O [BeeCrowd](https://www.beecrowd.com.br/judge/pt/login) funciona testando a saída esperada do problema com a saída gerada pelo seu programa. Se o conteúdo estiver correto, ele diz que está correto, mas se tem algum erro de apresentação (um espaço a mais, que seja), ele diz que houve *Presentation Error*. Esse tipo de erro não será considerado por mim como erro (para mim, o que importa é o conteúdo da resposta e não a apresentação), mas, se você quiser corrigir os erros de apresentação do seu programa, aqui vão algumas dicas: 
+
+* Não coloque mensagem no comando de *input*. Por exemplo, ao invés de: 
+
+
+```
+nome = input("Digite o nome: ")
+```
+
+Faça simplesmente: 
+
+```
+nome = input()
+```
+
+* Se usar o print para imprimir uma mensagem e o valor de uma variável, lembre-se de que o interpretador Python adiciona um espaço em branco automaticamente entre a mensagem e o valor da variável. Por exemplo, o comando: 
+
+
+```
+a = 10
+```
+
+```
+print("A =", a) 
+```
+
+imprime na tela: 
+
+
+```
+A = 10
+```
+
+
+Note que na saída gerada pelo programa, há um espaço, após a igualdade, que foi adicionado automaticamente pelo interpretador Python. 
+
+## Cronograma
+
+{: style="border-collapse: collapse; width: 100%; text-align: center;" border="1"}
+|Data|Atividade
+|--
+|24/09/2024| [Apresentação da disciplina]()<BR/>[Histórico]()
+|26/09/2024| [Introdução à Programação]()
+|01/10/2024| [Organização de Programas Python]()
+|03/10/2024| Prática no Laboratório
+|08/10/2024| [Operadores]()<BR/>[Exercícios]()
+|10/10/2024| Prática no Laboratório
+|15/10/2024| **SEM AULA - AGENDA ACADÊMICA**
+|17/10/2024| **SEM AULA - AGENDA ACADÊMICA**
+|22/10/2024| [Estruturas de Decisão]()
+|24/10/2024| Prática no Laboratório
+|29/10/2024| [Estruturas de Repetição]()
+|31/10/2024| Prática no Laboratório
+|05/11/2024| [Manipulação de Strings]()
+|07/11/2024| Prática no Laboratório
+|12/11/2024| Revisão para a prova
+|14/11/2024| **PROVA 1**
+|19/11/2024| [Vetores]()
+|21/11/2024| Prática no Laboratório
+|26/11/2024| VISTA DE PROVA (Presença Opcional)
+|28/11/2024| Prática no Laboratório
+|03/12/2024| [Manipulação de Listas]()
+|05/12/2024| Prática no Laboratório
+|10/12/2024| [Matrizes]()
+|12/12/2024| Prática no Laboratório
+|17/12/2024| [Subprogramação]()
+|19/12/2024| Prática no Laboratório
+|24/12/2024| **SEM AULA** (Recesso)
+|26/12/2024| **SEM AULA** (Recesso)
+|31/12/2024| **SEM AULA** (Recesso)
+|02/01/2025| **SEM AULA** (Recesso)
+|07/01/2025| Prática no Laboratório
+|09/01/2025| Prática no Laboratório
+|14/01/2025| **PROVA 2**
+|16/01/2025| **SEGUNDA CHAMADA**
+|21/01/2025| **SEM AULA**
+|23/01/2025| VISTA DE P2 e SEGUNDA CHAMADA (sala 540)
+|28/01/2025| Prática no Laboratório (dúvidas)
+|30/01/2025| **VS**
+|04/02/2025| **SEM AULA**
+|06/02/2025| VISTA DE VS (sala 540)

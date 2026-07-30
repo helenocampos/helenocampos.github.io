@@ -1,0 +1,156 @@
+---
+title: Programação de Computadores
+in_menu: true
+sort_info: 1
+---
+# TCC00366 - Programação de Computadores I
+
+<BR/>
+Horário: segundas e quartas de 18h às 20h 
+
+Local: 
+
+Segundas: Sala 204
+
+Quartas: Laboratório L305
+
+Sala de aula virtual da disciplina: usaremos o [Google Classroom](http://classroom.google.com/) para as discussões e avisos. A sala de aula no Google Classroom será usada também para divulgar avisos gerais e para dúvidas. <BR/>
+
+
+## Monitoria
+
+Horários e local de atendimento: consulte a [página da monitoria](http://profs.ic.uff.br/~troy/Tutoring/2025.html). Além dos monitores, os alunos também podem pedir ajuda aos Tutores, caso eles estejam disponíveis.
+
+## Avaliação
+
+P1 = Prova sem consulta
+
+P2 = Prova sem consulta
+
+$$Média = \frac{P1 + P2}{2}$$
+
+**APROVADO**
+
+$$Presença \geq 75\% ~ E ~ Média \geq 6$$
+
+**VERIFICAÇÃO SUPLEMENTAR**
+
+$$Presença \geq 75\% ~ 4 ~ \leq Média < 6$$
+
+Será aprovado na VS se tirar nota maior ou igual a 6.
+
+**REPROVADO**
+
+Caso contrário
+
+## Exercícios no BeeCrowd
+
+Diversos exercícios serão disponibilizadas durante o curso. Todos terão data de entrega marcada no [BeeCrowd](https://www.beecrowd.com.br/judge/pt/login) -- ver código da turma no [Google Classroom](http://classroom.google.com/). Alunos que entregarem os exercícios no prazo e corretos podem ser aprovados direto caso tenham ficado com média entre 5,5 e 5,9. Da mesma forma, terão direto à VS caso tenham ficado com média entre 3,5 e 3,9.
+
+## Video-aulas no Youtube
+
+Caso você tenha perdido alguma aula ou deseje rever algum ponto específico, é possível assistir às aulas da disciplina gravadas por outro professor. Acesse a [playlist no canal do IC](https://www.youtube.com/playlist?list=PLclUQno6PMpSYq0XLXgn7BTqloLXIso7q).
+
+## Presença
+
+De acordo com o [Regulamento dos Cursos de Graduação](http://www.uff.br/sites/default/files/001-2015_regulamento_do_curso_de_graduacao_0.pdf), a presença mínima necessária para aprovação é de 75% das aulas (Art. 96) e não há abono de faltas sem documentação (Art. 103).
+
+## Bibliografia
+
+Paul Barry, Use a Cabeça! Programação, Editora Alta Books.
+
+Paul Barry, Use a Cabeça! Python, Editora Alta Books.
+
+Furlan, M., Gomes, M., Soares, M., Concilio, R., 2005, Algoritmos e Lógica de Programação, Editora Thomson.
+
+## Ferramentas
+
+* [Interpretador Python](https://www.python.org/downloads/)
+* [VSCode](https://code.visualstudio.com/)
+* Interpretadores Online: 
+    * [Replit](https://replit.com/)
+    * [Online Python](https://www.online-python.com/) 
+    * [Google Colaboratory](https://colab.research.google.com/)
+* Existem apps para tablets e celulares que permitem programar em Python. Faça a busca na loja de aplicativos do seu aparelho. Sugestões: [QPython](http://www.qpython.com/) (para Android) e [Python 3.4](https://itunes.apple.com/us/app/python-3-4-for-ios/id583476348?mt=8) (para IOS).
+
+O aluno tem liberdade de utilizar a IDE Python de sua preferência. Contudo, nas atividades de sala de aula será utilizado o [VSCode](https://code.visualstudio.com/).
+
+## Dicas para uso do BeeCrowd
+
+O [BeeCrowd](https://www.beecrowd.com.br/judge/pt/login) funciona testando a saída esperada do problema com a saída gerada pelo seu programa. Se o conteúdo estiver correto, ele diz que está correto, mas se tem algum erro de apresentação (um espaço a mais, que seja), ele diz que houve *Presentation Error*. Para corrigir os erros de apresentação do seu programa, aqui vão algumas dicas: 
+
+* Não coloque mensagem no comando de *input*. Por exemplo, ao invés de: 
+
+
+```
+nome = input("Digite o nome: ")
+```
+
+Faça simplesmente: 
+
+```
+nome = input()
+```
+
+* Se usar o print para imprimir uma mensagem e o valor de uma variável, lembre-se de que o interpretador Python adiciona um espaço em branco automaticamente entre a mensagem e o valor da variável. Por exemplo, o comando: 
+
+
+```
+a = 10
+```
+
+```
+print("A =", a) 
+```
+
+imprime na tela: 
+
+
+```
+A = 10
+```
+
+
+Note que na saída gerada pelo programa, há um espaço, após a igualdade, que foi adicionado automaticamente pelo interpretador Python. 
+
+## Cronograma  
+
+{: style="border-collapse: collapse; width: 100%; text-align: center;" border="1"}
+| Aula | Local | Data       | Atividade                        |
+|------|-------|-----------|----------------------------------|
+| 1    | Sala  | 24/03/2025 | Apresentação da disciplina      |
+| 2    | Lab   | 26/03/2025 | Histórico e Introdução à Programação |
+| 3    | Sala  | 31/03/2025 | Histórico e Introdução à Programação |
+| 4    | Lab   | 02/04/2025 | Organização de Programas em Python |
+| 5    | Sala  | 07/04/2025 | Operadores                      |
+| 6    | Lab   | 09/04/2025 | Operadores                      |
+| 7    | Sala  | 14/04/2025 | Estruturas de decisão           |
+| 8    | Lab   | 16/04/2025 | Estruturas de decisão           |
+|      |       | 21/04/2025 | **Feriado (Tiradentes)**        |
+|      |       | 23/04/2025 | **Feriado (São Jorge)**         |
+| 9    | Sala  | 28/04/2025 | Repetição                       |
+| 10   | Lab   | 30/04/2025 | Repetição                       |
+| 11   | Sala  | 05/05/2025 | Manipulação de strings          |
+| 12   | Lab   | 07/05/2025 | Manipulação de strings          |
+| 13   | Sala  | 12/05/2025 | **Prova 1**                     |
+| 14   | Lab   | 14/05/2025 | Vetores                         |
+| 15   | Sala  | 19/05/2025 | Vetores                         |
+| 16   | Lab   | 21/05/2025 | Manipulação de listas           |
+| 17   | Sala  | 26/05/2025 | Manipulação de listas           |
+| 18   | Lab   | 28/05/2025 | Manipulação de listas           |
+| 19   | Sala  | 02/06/2025 | Matrizes                        |
+| 20   | Lab   | 04/06/2025 | Matrizes                        |
+| 21   | Sala  | 09/06/2025 | Matrizes                        |
+| 22   | Lab   | 11/06/2025 | Matrizes                        |
+| 23   | Sala  | 16/06/2025 | Subprogramação                  |
+| 24   | Lab   | 18/06/2025 | Subprogramação                  |
+| 25   | Sala  | 23/06/2025 | Arquivos                        |
+| 26   | Lab   | 25/06/2025 | Arquivos                        |
+| 27   | Sala  | 30/06/2025 | Revisão                         |
+| 28   | Lab   | 02/07/2025 | Revisão                         |
+| 29   | Sala  | 07/07/2025 | **Prova 2**                     |
+|      |       | 09/07/2025 | **Sem aula**                    |
+| 30   | Sala  | 14/07/2025 | **Segunda chamada**             |
+| 31   |       | 16/07/2025 | Vista de prova                  |
+| 32   | Sala  | 21/07/2025 | **Verificação suplementar**     |
+| 33   |       | 23/07/2025 | Vista de prova                  |
