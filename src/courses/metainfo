@@ -1,4 +1,10 @@
 --- alcn
+2026-2/:
+  title: 2026.2
+  proxy_path: qualidade_software.html
+  in_menu: true
+  sort_info: 78
+
 2025-2/:
   title: 2025.2
   proxy_path: dev_web.html

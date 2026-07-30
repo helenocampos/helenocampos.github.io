@@ -5,7 +5,7 @@
 --- alcn
 courses/:
   title: Courses
-  proxy_path: 2025-2/dev_web.html
+  proxy_path: 2026-2/qualidade_software.html
   in_menu: true
   sort_info: 2
 
