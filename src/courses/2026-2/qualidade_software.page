@@ -4,14 +4,19 @@ in_menu: true
 sort_info: 1
 ---
 # COS482 - Qualidade de Software
+
 <BR/>
-Horário: terças e quintas, das 10h às 11h
+Horário: terças e quintas, das 10h às 12h
 
-Local: a definir
+Sala: H-324A
 
-Período letivo 2026.2: de 10 de agosto a 19 de dezembro de 2026.
+Período letivo 2026.2: de 10 de agosto a 19 de dezembro de 2026. Primeira aula em
+11/08/2026, última em 17/12/2026.
 
 Curso: Engenharia de Computação e Informação (ECI) --- Escola Politécnica / COPPE.
+
+Sala de aula virtual da disciplina: usaremos o [Moodle do PESC](https://moodle.cos.ufrj.br)
+para os avisos, o material das aulas e a entrega de todas as atividades.
 
 ## Ementa
 
@@ -21,13 +26,242 @@ de pacotes: ISO 12119. Gerência da qualidade. Definição de requisitos de
 qualidade de produtos. Planejamento do controle da qualidade. Métricas. Técnicas
 para avaliação da qualidade.
 
+Obs.: a ementa registrada no SIGA cita normas que foram substituídas. A ISO 9126
+deu lugar à ISO/IEC 25010 (série SQuaRE) em 2011, o CMM virou CMMI, hoje na
+versão 3.0, e a ISO 12207 foi revisada em 2017. O curso apresenta as normas
+vigentes indicando a correspondência com as antigas.
+
+## Objetivos
+
+Ao final da disciplina o aluno deve ser capaz de:
+
+1. Distinguir qualidade de processo e qualidade de produto, e situar verificação,
+   validação, revisão e teste dentro da gerência da qualidade.
+2. Definir e medir atributos de qualidade de um produto de software usando a
+   ISO/IEC 25010 e métricas de produto (complexidade, acoplamento, coesão,
+   cobertura).
+3. Planejar a atividade de teste, escrevendo um plano de teste, projetando casos
+   de teste e registrando defeitos segundo um processo definido.
+4. Aplicar as técnicas funcional, estrutural e baseada em defeitos, sabendo
+   argumentar qual usar e por quê.
+5. Automatizar teste de unidade, integração e sistema com JUnit, Mockito e
+   Selenium, e integrá-los a um pipeline de CI/CD com quality gates.
+6. Avaliar a maturidade de um processo de software segundo ISO 12207, ISO 9001,
+   ISO/IEC 33000, CMMI e MPS.BR.
+7. Inspecionar artefatos de software com técnicas de leitura sistemática e
+   identificar dívida técnica.
+
+## Metodologia
+
+Aulas expositivas e dialogadas, com estudo de caso ao longo de todo o semestre.
+
+Não há laboratório disponível para a turma. Todo conteúdo prático é demonstrado
+pelo professor em sala, com o código e os passos publicados no Moodle, e o aluno
+refaz em casa. A única atividade executada em sala é a inspeção de código, que é
+feita em papel.
+
+O trabalho prático em grupo atravessa a disciplina inteira. Os grupos escolhem um
+software livre real na quarta semana e aplicam sobre ele, incrementalmente, cada
+técnica apresentada.
+
+### Linguagem
+
+As aulas e as atividades avaliativas usam **Java**, por ser onde o ferramental de
+qualidade e teste é maduro, em particular o PIT para teste de mutação.
+
+No trabalho em grupo a linguagem é livre, com a ressalva de que o suporte do
+professor pode se limitar a Java. Grupos que optarem por outra linguagem assumem
+a responsabilidade de encontrar e validar o ferramental equivalente.
+
 ## Avaliação
 
-A definir.
+$$Nota~final = (0{,}20 \cdot T1 + 0{,}30 \cdot T2) \cdot AP + 0{,}35 \cdot PT + 0{,}15 \cdot A$$
 
-A aprovação exige nota final igual ou superior a 5,0 **e** frequência de no
-mínimo 75% das aulas ministradas.
+{: style="border-collapse: collapse; width: 70%;" border="1"}
+| Símbolo | O que é | Peso |
+|---|---|---|
+| **T1** | Entrega 1 do trabalho: escopo, plano de teste, testes unitários e testes manuais | 20% |
+| **T2** | Entrega 2 do trabalho: integração, sistema, estrutural, mutação, ISO 25010, inspeção de código | 30% |
+| **AP** | Nota individual de apresentação, entre 0 e 1, que multiplica a nota do trabalho | multiplicador |
+| **PT** | Prova teórica, sem consulta | 35% |
+| **A** | Média das atividades, descartando a de menor nota | 15% |
+
+Todas as notas na escala de 0 a 10, arredondadas a uma casa decimal.
+
+**APROVADO**
+
+$$Frequência \geq 75\% ~ E ~ Nota~final \geq 5{,}0$$
+
+**REPROVADO**
+
+Caso contrário.
+
+### O multiplicador AP
+
+A nota do trabalho de cada aluno é multiplicada por um valor entre 0 e 1,
+atribuído individualmente com base na apresentação e nas respostas às perguntas
+feitas durante ela.
+
+* Não apresentar significa AP = 0, ou seja, nota 0 no trabalho.
+* Sem contribuição verificável no GitHub, nota 0 no trabalho. O histórico do
+  repositório é analisado.
+* Havendo discrepância de participação dentro do grupo, a nota é individualizada.
+  Dois integrantes do mesmo grupo podem terminar com 9,0 e 5,0.
+
+### Atividades
+
+Teremos algumas atividades ao longo do semestre. Descarta-se a de menor nota e a média das
+ restantes é o valor de A. O descarte cobre o imprevisto ordinário (doença,
+viagem, semana ruim) sem exigir pedido de segunda chamada, e por isso não há
+segunda chamada para as atividades.
+
+Entrega de todas pelo Moodle.
+
+### Prova
+
+A prova teórica será feita em aula, sem consulta, e cobrirá o conteúdo
+teórico da disciplina. 
+
+A **segunda chamada** também será feita em horário de aula, e comparecerá somente
+quem precisa. O pedido é feito diretamente ao professor, mediante atestado ou
+justificativa oficial, conforme o Art. 4º da Resolução CEG 104/2022.
+
+### Prazos e entrega
+
+* Prazo não cumprido invalida a entrega do trabalho.
+* Os artefatos precisam estar na branch principal do repositório, com links
+  diretos no `README.md`. Artefato não referenciado não é avaliado.
+* Documentos colaborativos (plano de teste, relatórios) em Google Docs com todos
+  os integrantes logados nas próprias contas, para que a contribuição individual
+  seja rastreável.
+
+### Uso de IA
+
+O uso é permitido desde que devidamente declarado. Indicar como e em quais tarefas foi utilizado.
+Indicar também qual foi o modelo/agente. **Lembre-se que IA deve ser usada como ferramenta de apoio ao ensino**,
+não como substituto do aluno.
+
+
+### Comportamento ético
+
+> "Plágio é a utilização de ideias ou formulações verbais, orais ou escritas de
+> outrem sem dar-lhe por elas, expressa e claramente, o devido crédito, de modo a
+> gerar razoavelmente a percepção de que sejam ideias ou formulações de autoria
+> própria."
+
+* Não copiar gabaritos, soluções ou trabalhos de qualquer fonte.
+* Haverá verificação de cópia entre entregas de alunos e grupos diferentes.
+* Não compartilhe sua resposta. Quem compartilha costuma ser o mais prejudicado.
+* Não assinar presença por colega.
+* Dar crédito apropriado ao usar trabalho de terceiros.
+
+## Trabalho
+
+O trabalho consiste em aplicar os conceitos de qualidade e teste em até dois
+softwares livres escolhidos pelo grupo. Serão 10 grupos, formados por 5 alunos cada.
+Os integrantes devem ter as responsabilidades documentadas, e a escolha do sistema deve
+ser consultada com o professor antes de ser fechada.
+
+O software escolhido precisa ter código-fonte disponível e classes com
+complexidade real, não só cadastros. Um dos projetos deve ter ao menos uma classe
+de alta complexidade por integrante do grupo, com complexidade ciclomática mínima
+de 10 por classe sob teste.
+
+{: style="border-collapse: collapse; width: 70%;" border="1"}
+| Marco | Data |
+|---|---|
+| Formação dos grupos e escolha do(s) sistema(s) | até 03/09 |
+| Criar o repositório do grupo e fazer fork do(s) sistema(s) | até 10/09 |
+| **Entrega 1** (20%) | até 11/10 |
+| Apresentação da Entrega 1 | 13/10 e 15/10 |
+| Acompanhamento e dúvidas da Entrega 2 | 24/11 |
+| Plantão do trabalho final | 03/12 |
+| **Entrega 2** (30%) | até 06/12 |
+| Apresentação final | 08/12, 10/12 e 15/12 |
+
+**Entrega 1:** descrição do escopo, código-fonte original (fork), casos de teste
+unitários de pelo menos uma classe por integrante, plano de teste no template
+IEEE 829, casos de teste manuais projetados e executados em
+pelo menos um cenário, e issues reportadas em um bug tracker.
+
+**Entrega 2:** ampliação dos testes unitários com isolamento de dependências
+(Mockito), testes de integração, medidas dos atributos de qualidade da
+ISO/IEC 25010, testes de sistema com Selenium ou similar (ao menos um teste E2E
+por integrante), melhoria do conjunto de casos de teste pelas técnicas funcional,
+estrutural (mínimo de 80% de cobertura no critério todas-arestas) e baseada em
+defeitos (mínimo de 80% de escore de mutação), e relatório de inspeção do
+código-fonte com correção dos problemas apontados.
+
+O enunciado completo, com os critérios de avaliação e o formato das
+apresentações, estará no Moodle.
+
+## Presença
+
+A frequência mínima para aprovação é de 75% das aulas.
 
 ## Bibliografia
 
-A definir.
+**Básica**
+
+* KOSCIANSKI, A.; SOARES, M. S. *Qualidade de Software*. 2. ed. Novatec.
+* DELAMARO, M. E.; MALDONADO, J. C.; JINO, M. *Introdução ao Teste de Software*.
+  Elsevier.
+* PRESSMAN, R. S. *Engenharia de Software*. 8. ed. McGraw-Hill.
+
+**Complementar**
+
+* SOMMERVILLE, I. *Engenharia de Software*. Pearson Addison Wesley.
+* IEEE Std 829, *Standard for Software Test Documentation*.
+* ISO/IEC 25010, *Systems and software Quality Requirements and Evaluation
+  (SQuaRE)*.
+* ISO/IEC/IEEE 12207, *Software life cycle processes*.
+* ISO/IEC 33000, *Process assessment*.
+* SOFTEX. *MPS.BR, Melhoria de Processo do Software Brasileiro*.
+  <http://softex.br/mpsbr/>
+
+## Cronograma
+
+
+{: style="border-collapse: collapse; width: 70%;" border="1"}
+| # | Data | Tópico |
+|---|---|---|
+| 1 | 11/08 ter | Apresentação da disciplina, regras, avaliação e trabalho |
+| 2 | 13/08 qui | Fundamentos de Qualidade e Teste |
+| 3 | 18/08 ter | Verificação e Validação |
+| 4 | 20/08 qui | Inspeção e Revisão de Software  |
+| 5 | 25/08 ter | Java essencial para teste e Introdução ao JUnit  |
+| 6 | 27/08 qui | Princípios de Teste I: engano, defeito, erro, falha e critérios de teste |
+| 7 | 01/09 ter | Princípios de Teste II: casos de teste, oráculos, limites do teste |
+| 8 | 03/09 qui | Métricas de produto: LOC, complexidade ciclomática, acoplamento, coesão, GQM · **formação dos grupos e escolha do sistema** |
+| --- | 08/09 ter | **Sem aula** |
+| --- | 10/09 qui | **Sem aula** |
+| 9 | 15/09 ter | Dívida Técnica |
+| 10 | 17/09 qui | Processo de Teste I: planejamento, IEEE 829, plano de teste |
+| 11 | 22/09 ter | Processo de Teste II: execução, relato de defeitos, TestLink  |
+| 12 | 24/09 qui | Fases de Teste I: teste de unidade |
+| 13 | 29/09 ter | Fases de Teste II: integração e Mockito  |
+| 14 | 01/10 qui | Fases de Teste III: teste de sistema e de aceitação |
+| 15 | 06/10 ter | Teste Funcional I: partição de equivalência, análise do valor limite |
+| 16 | 08/10 qui | Teste Funcional II: tabela de decisão, grafo de causa-efeito |
+| --- | 11/10 dom |  **Entrega 1 do Trabalho**, 23h59 |
+| 17 | 13/10 ter |  Apresentação da Entrega 1, parte 1 |
+| 18 | 15/10 qui |  Apresentação da Entrega 1, parte 2 |
+| 19 | 20/10 ter | Selenium: automação de teste de sistema  |
+| 20 | 22/10 qui | Teste Estrutural I: grafo e critérios de fluxo de controle |
+| 21 | 27/10 ter | Teste Estrutural II: fluxo de dados, cobertura com JaCoCo  |
+| 22 | 29/10 qui | Teste Baseado em Defeitos I: teste de mutação |
+| 23 | 03/11 ter | Teste Baseado em Defeitos II: operadores, escore de mutação, PIT  |
+| 24 | 05/11 qui | CI/CD para qualidade: pipeline, quality gates, SonarQube  |
+| 25 | 10/11 ter | Qualidade do Processo I |
+| 26 | 12/11 qui | Qualidade do Processo II: medição de processo e controle estatístico |
+| 27 | 17/11 ter | Normas e Modelos de Maturidade: ISO 12207, ISO 9001, ISO/IEC 33000, CMMI, MPS.BR |
+| 28 | 19/11 qui | Qualidade do Produto: ISO 9126 para ISO/IEC 25010, ISO 14598, ISO 12119 |
+| 29 | 24/11 ter | Acompanhamento dos grupos, dúvidas da Entrega 2 |
+| 30 | 26/11 qui | Revisão para a prova |
+| 31 | 01/12 ter | **Prova teórica**, sem consulta |
+| 32 | 03/12 qui | Plantão do trabalho final |
+| --- | 06/12 dom | **Entrega 2 do Trabalho**, 23h59 |
+| 33 | 08/12 ter |  Apresentação Final, parte 1 |
+| 34 | 10/12 qui | Apresentação Final, parte 2 |
+| 35 | 15/12 ter | Apresentação Final, parte 3 |
+| 36 | 17/12 qui | **Segunda chamada da prova** (comparece só quem precisa) |
