@@ -15,6 +15,9 @@
 .PARAMETER Forcar
     Pula a confirmacao interativa.
 
+.PARAMETER SemCOS
+    Publica so no GitHub Pages, sem copiar para www.cos.ufrj.br/~heleno.
+
 .EXAMPLE
     .\publicar.ps1 -m "Atualiza vinculo COPPE/UFRJ"
 
@@ -27,7 +30,8 @@ param(
     [string]$Mensagem,
 
     [switch]$SemPush,
-    [switch]$Forcar
+    [switch]$Forcar,
+    [switch]$SemCOS
 )
 
 $ErrorActionPreference = 'Stop'
@@ -95,3 +99,15 @@ if ($LASTEXITCODE -ne 0) {
 Write-Host ""
 Write-Host "Publicado. O GitHub Pages leva ate ~1 min para atualizar:" -ForegroundColor Green
 Write-Host "  https://helenocampos.github.io" -ForegroundColor Green
+
+if ($SemCOS) {
+    Write-Host ""
+    Write-Host "Copia para o COS pulada (-SemCOS). Para enviar depois:  .\publicar-cos.ps1" -ForegroundColor Yellow
+    exit 0
+}
+
+& "$PSScriptRoot\publicar-cos.ps1"
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "O GitHub foi atualizado, mas a copia no COS falhou. Tente de novo:  .\publicar-cos.ps1" -ForegroundColor Red
+    exit 1
+}
